@@ -1,0 +1,53 @@
+TODO:
+finish writing last room of adventure
+find / make intro screen and win screen graphics
+finalize and find / make inventory graphics
+
+
+*Amanda's Valentine's Day Adventure*
+
+Intro:
+	Type 'quit' or 'exit' to close the program.
+	Type 'look' to see a little description of where you are.
+
+
+You walk in the front door after having to get your key out to unlock it.
+Even though someone is already home. Inside. On the couch. Hrrmph.
+Instead of seeing someone on their laptop on the couch, you instead see a bear.
+Look:
+	The front room seems normal. Toys on the floor, couch, TV.
+	The bear, however, seems out of place. You think you could take him.
+	
+After victoriously fighting the bear, you walk into the kitchen.
+Blocking your way, you see a sphinx, looks like he is itching to talk to you.
+The door to the pantry is ajar.
+Look in pantry:
+	The sphinx makes no move to stop you.
+	You notice that someone has eaten most of the Happy Hippos.
+Look at kitchen:
+	The under-cabinet lighting really accentuates the place.
+	You wish the countertops were cleaner.
+Look at sphinx:
+	Ancient and mysterious, sphinxes are known for their riddling ability.
+Talk to sphinx:
+	He asks you a riddle:
+	I look at you, you look at me. You raise your right, I raise my left. What am I?
+		(reflection, mirror)
+
+After answering correctly, the sphinx fades from existance.
+Behind him was a vase of flowers!
+You make your way to the dining room after solving the riddle of the sphinx.
+You see a small but vicious honey badger.
+She is sitting on and guarding a brightly wrapped Valentine's Day present.
+You also notice an oblong machine plugged into the wall with pens sticking out of one side. It is on top of some thick, colorful card stock.
+Look at badger:
+	Badgers can usually be distracted by shiny or colorful things.
+	Maybe even well-designed and colorful things (hint, hint!)
+Look at machine:
+	It is rose-tinted and has various buttons and dials on the top.
+	Different-colored markers jut out of a holder on one end.
+	It says Cricut on the top.
+Use Cricut on cardstock:
+	You give the card to the badger.
+	She calms down and returns to playing with the horses in the stable.
+	You win!
