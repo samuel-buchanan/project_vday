@@ -14,22 +14,22 @@ parser_font = pygame.font.SysFont(None, 72)
 
 bear_pelt = pygame.image.load("bearpelt16x16.bmp")
 
-pygame.display.set_caption("Welcome to my game!")
+pygame.display.set_caption("*Amanda's Valentine's Day Adventure*")
 
-text1_string = "1)Hello World"
-text2_string = "2)line2"
-text3_string = "3)12345678901234567890123456789012345678901234567890"
-text4_string = "4)line4"
-text5_string = "5)Welcome to your adventure"
-text6_string = "6)You walk in your front door to see a bear guarding the door to the next area."
-text7_string = "7)He looks hungry. What do you do?"
-text8_string = "8) something here"
-text9_string = "9) something here"
-text10_string = "10) something here"
-text11_string = "11) something here"
-text12_string = "12) something here"
-text13_string = "13) something here"
-text14_string = "14) something here"
+text1_string = ""
+text2_string = ""
+text3_string = ""
+text4_string = ""
+text5_string = ""
+text6_string = "Samsoft Presents:"
+text7_string = "*Amanda's Valentine's Day Adventure*"
+text8_string = ""
+text9_string = "Type 'quit' or 'exit' to close the program."
+text10_string = "Type 'look' to see a little description of where you are."
+text11_string = ""
+text12_string = ""
+text13_string = "You walk in the front door of the house."
+text14_string = "Instead of someone on their laptop on the couch, you instead see a bear."
 input_string = ""
 
 text_string_list = [text1_string, text2_string, text3_string, text4_string, text5_string, text6_string, text7_string, text8_string, text9_string, text10_string, text11_string, text12_string, text13_string, text14_string]
@@ -41,8 +41,8 @@ text2 = font.render(text2_string, True, (65, 0, 0))
 text3 = font.render(text3_string, True, (65, 0, 0))
 text4 = font.render(text4_string, True, (90, 0, 0))
 text5 = font.render(text5_string, True, (90, 0, 0))
-text6 = font.render(text6_string, True, (90, 0, 0))
-text7 = font.render(text7_string, True, (90, 0, 0))
+text6 = font.render(text6_string, True, (125, 0, 0))
+text7 = font.render(text7_string, True, (125, 0, 0))
 text8 = font.render(text8_string, True, (125, 0, 0))
 text9 = font.render(text9_string, True, (125, 0, 0))
 text10 = font.render(text10_string, True, (125, 0, 0))
@@ -98,7 +98,6 @@ while not done:
 		elif event.type == pygame.KEYDOWN and event.key == pygame.K_BACKSPACE:
 			input_string = input_string[:-1]
 			text15 = parser_font.render(f">{input_string}", True, (255, 0, 0))
-
 		elif event.type == pygame.KEYDOWN:
 			if event.unicode.isalnum() == True or event.key == pygame.K_SPACE:
 				input_string = input_string + event.unicode
@@ -113,28 +112,29 @@ while not done:
 
 
 			# MAIN GAME ROOM LOOP HERE
-			text_string_list.append(input_string)
+			text_string_list.append(">" + input_string)
 			
 			if "bear pelt" in inventory and "tentacle" in inventory:
 				room_output = third_room(input_string)
 				for i in range(0, len(room_output)):
 					text_string_list.append(room_output[i])
-				if "You fight the giant weasel. He was guarding a treasure chest!" in room_output:
+				if "You win the game!" in room_output:
 					inventory.append("stoat skin")
 
 			elif "bear pelt" in inventory:
 				room_output = second_room(input_string)
 				for i in range(0, len(room_output)):
 					text_string_list.append(room_output[i])
-				if "You chop off one of his tentacles and he retreats." in room_output:
+				if "It is on top of some thick, colorful card stock." in room_output:
 					inventory.append("tentacle")
 
 			else:
 				room_output = first_room(input_string)
-				if "But eventually you triumph. You get a bear pelt." in room_output:
+				if "The door to the pantry is ajar." in room_output:
 					inventory.append("bear pelt")
 				for i in range(0, len(room_output)):
 					text_string_list.append(room_output[i])
+
 
 			text1_string = text_string_list[-14]
 			text2_string = text_string_list[-13]
@@ -183,6 +183,7 @@ while not done:
 	
 	# win screen
 	if "bear pelt" in inventory and "tentacle" in inventory and "stoat skin" in inventory:
+		pygame.time.wait(5000)
 		while not win_screen_over:
 			for event in pygame.event.get():
 				screen.fill((0, 0, 255))
