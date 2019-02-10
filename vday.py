@@ -13,6 +13,8 @@ font = pygame.font.SysFont(None, 48)
 parser_font = pygame.font.SysFont(None, 72)
 
 bear_pelt = pygame.image.load("bearpelt16x16.bmp")
+startup_splash = pygame.image.load("AsVdayAdventure.bmp")
+you_win = pygame.image.load("you_win_yellow.bmp")
 
 pygame.display.set_caption("*Amanda's Valentine's Day Adventure*")
 
@@ -81,6 +83,7 @@ while not splash_screen_over:
 	for event in pygame.event.get():
 		screen.fill((255, 255, 0))
 		splash_text = font.render("Welcome to your adventure!", True, (0, 0, 0))
+		screen.blit(startup_splash, (60, 86))
 		press_enter_text = font.render("Press enter to start.", True, (0, 0, 0))
 		if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
 			splash_screen_over = True
@@ -193,6 +196,7 @@ while not done:
 					win_screen_over = True
 					done = True
 					break
+				screen.blit(you_win, (284, 9))
 				screen.blit(winscreen_text, (0, 225))
 				screen.blit(win_enter_text, (0, 300))
 				pygame.display.update()

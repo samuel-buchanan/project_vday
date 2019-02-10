@@ -1,8 +1,8 @@
 TODO:
+fix intro and win screen graphics / backgrounds
 better clue on fight / beat up bear
 figure out inventory / present for first room
-find / make intro screen and win screen graphics
-finalize and find / make inventory graphics
+
 
 
 *Amanda's Valentine's Day Adventure*
