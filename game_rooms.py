@@ -3,10 +3,10 @@ import pygame
 
 def first_room(self):
 	if "fight" in self:
-		success = ["You fight the bear and win!", "After victoriously fighting the bear, you walk into the kitchen.", "Blocking your way you see a sphinx. He is itching to talk to you.", "The door to the pantry is ajar."]
+		success = ["You fight the bear and win!", "After victoriously fighting the bear, you see he was guarding a present!", "You walk into the kitchen.", "Blocking your way you see a sphinx. He is itching to talk to you.", "The door to the pantry is ajar."]
 		return(success)
 	elif "beat up" in self:
-		success = ["You fight the bear and win!", "After victoriously fighting the bear, you walk into the kitchen.", "Blocking your way you see a sphinx. He is itching to talk to you.", "The door to the pantry is ajar."]
+		success = ["You fight the bear and win!", "After victoriously fighting the bear, you see he was guarding a present!", "You walk into the kitchen.", "Blocking your way you see a sphinx. He is itching to talk to you.", "The door to the pantry is ajar."]
 		return(success)
 	elif "look" in self:
 		description = ["The front room seems normal. Toys on the floor, couch, TV.", "The bear, however, seems out of place. You think you could beat him up."]
@@ -19,7 +19,7 @@ def first_room(self):
 
 def second_room(self):
 	if "mirror" in self or "reflection" in self:
-		success = ["After answering correctly, the sphinx fades from existance.", "Behind him was a vase of flowers!", "You make your way to the dining room after solving the riddle of the sphinx.", "You see a small but vicious honey badger.", "She is sitting on and guarding a brightly wrapped Valentine's Day present.", "You notice an oblong, light pink machine with a tangled white cord.", "It is on top of some thick, colorful card stock."]
+		success = ["After answering correctly, the sphinx fades from existence.", "Behind him was a vase of flowers!", "You make your way to the dining room after solving the riddle of the sphinx.", "You see a small but vicious honey badger.", "She is sitting on and guarding a brightly wrapped Valentine's Day present.", "You notice an oblong, light pink machine with a tangled white cord.", "It is on top of some thick, colorful card stock."]
 		return(success)
 	elif "look" in self and "kitchen" in self:
 		description = ["The under-cabinet lighting really accentuates the place.", "You wish the countertops were cleaner."]

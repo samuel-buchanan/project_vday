@@ -12,7 +12,7 @@ win_screen_over = False
 font = pygame.font.SysFont(None, 48)
 parser_font = pygame.font.SysFont(None, 72)
 
-bear_pelt = pygame.image.load("bearpelt16x16.bmp")
+#bear_pelt = pygame.image.load("bearpelt16x16.bmp")
 startup_splash = pygame.image.load("AsVdayAdventure.bmp")
 you_win = pygame.image.load("you_win_yellow.bmp")
 
@@ -72,23 +72,23 @@ def render_all_lines():
 	screen.blit(text14, (0, 455))
 	screen.blit(text15, (0, 510))
 
-def render_inventory(inventory):
-	if "bear pelt" in inventory:
-		screen.blit(bear_pelt, (1100, 25))
+#def render_inventory(inventory):
+	#if "bear pelt" in inventory:
+	#	screen.blit(bear_pelt, (1100, 25))
 	# follow up with rest of inventory here
 
 
 # Start screen code below
 while not splash_screen_over:
 	for event in pygame.event.get():
-		screen.fill((255, 255, 0))
-		splash_text = font.render("Welcome to your adventure!", True, (0, 0, 0))
-		screen.blit(startup_splash, (60, 86))
+		screen.fill((255, 255, 255))
+		#splash_text = font.render("Welcome to your adventure!", True, (0, 0, 0))
+		screen.blit(startup_splash, (60, 50))
 		press_enter_text = font.render("Press enter to start.", True, (0, 0, 0))
 		if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
 			splash_screen_over = True
-		screen.blit(splash_text, (0,225))
-		screen.blit(press_enter_text, (0, 300))
+		#screen.blit(splash_text, (0,225))
+		screen.blit(press_enter_text, (450, 550))
 		pygame.display.update()
 
 
@@ -117,24 +117,24 @@ while not done:
 			# MAIN GAME ROOM LOOP HERE
 			text_string_list.append(">" + input_string)
 			
-			if "bear pelt" in inventory and "tentacle" in inventory:
+			if "petit fours" in inventory and "flower" in inventory:
 				room_output = third_room(input_string)
 				for i in range(0, len(room_output)):
 					text_string_list.append(room_output[i])
 				if "You win the game!" in room_output:
-					inventory.append("stoat skin")
+					inventory.append("cricut stuff")
 
-			elif "bear pelt" in inventory:
+			elif "petit fours" in inventory:
 				room_output = second_room(input_string)
 				for i in range(0, len(room_output)):
 					text_string_list.append(room_output[i])
 				if "It is on top of some thick, colorful card stock." in room_output:
-					inventory.append("tentacle")
+					inventory.append("flower")
 
 			else:
 				room_output = first_room(input_string)
 				if "The door to the pantry is ajar." in room_output:
-					inventory.append("bear pelt")
+					inventory.append("petit fours")
 				for i in range(0, len(room_output)):
 					text_string_list.append(room_output[i])
 
@@ -180,23 +180,23 @@ while not done:
 		
 	screen.fill((0, 0, 0))
 	render_all_lines()
-	render_inventory(inventory)
+	#render_inventory(inventory)
 	pygame.display.update()
 	clock.tick(30)
 	
 	# win screen
-	if "bear pelt" in inventory and "tentacle" in inventory and "stoat skin" in inventory:
+	if "petit fours" in inventory and "flower" in inventory and "cricut stuff" in inventory:
 		pygame.time.wait(5000)
 		while not win_screen_over:
 			for event in pygame.event.get():
-				screen.fill((0, 0, 255))
-				winscreen_text = font.render("You have won your adventure!", True, (0, 0, 0))
+				screen.fill((255, 255, 255))
+				#winscreen_text = font.render("You have won your adventure!", True, (0, 0, 0))
 				win_enter_text = font.render("Press enter to close the program.", True, (0, 0, 0))
 				if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
 					win_screen_over = True
 					done = True
 					break
-				screen.blit(you_win, (284, 9))
-				screen.blit(winscreen_text, (0, 225))
-				screen.blit(win_enter_text, (0, 300))
+				screen.blit(you_win, (284, 0))
+				#screen.blit(winscreen_text, (0, 225))
+				screen.blit(win_enter_text, (350, 565))
 				pygame.display.update()
