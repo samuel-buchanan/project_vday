@@ -1,5 +1,5 @@
 # project_vday
-My first program in Python3, using pygame to make a quick and dirty text adventure-type game.
+My first program in Python3, using pygame to make a simple text adventure-type game.
 
 Thought it would be fun to make a little program as a gift for my wife for Valentines day.
 
